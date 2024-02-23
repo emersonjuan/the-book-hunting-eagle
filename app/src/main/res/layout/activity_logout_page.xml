@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_logout"
+    tools:context=".LogoutPage">
+
+    <ImageView
+        android:id="@+id/imgBooksLogout"
+        android:layout_width="201dp"
+        android:layout_height="225dp"
+        android:contentDescription="@string/imgBooksLogout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997"
+        app:srcCompat="@drawable/books3"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtLogout"
+        android:layout_width="323dp"
+        android:layout_height="171dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="@string/txtLogout"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142"
+        tools:ignore="TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imgLogout"
+        android:layout_width="239dp"
+        android:layout_height="398dp"
+        android:contentDescription="@string/imgLogout"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="-8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/logout_eagle2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

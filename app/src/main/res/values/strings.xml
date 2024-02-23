@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">TheBookHuntingEagle</string>
+    <string name="imgWelcome">eaglebooks image</string>
+    <string name="imgBooks">books</string>
+    <string name="txtName">The Book Hunting Eagle</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnRegister">Register</string>
+    <string name="txtWelcome">Welcome to The Book Hunting Eagle</string>
+    <string name="inputEmail">e-mail</string>
+    <string name="inputPassword">******</string>
+    <string name="imgLogin">eagle books</string>
+    <string name="txtUserName">Username:</string>
+    <string name="txtPassword">Password:</string>
+    <string name="btnEnter">Enter</string>
+    <string name="txtNewName">Full Name</string>
+    <string name="txtNewAddress">Address</string>
+    <string name="txtNewPhone">Phone</string>
+    <string name="txNewEmail">E-mail</string>
+    <string name="txtNewPassword">Password</string>
+    <string name="inputNewName">full name</string>
+    <string name="inputNewAddress">address</string>
+    <string name="inputNewPhone">(xxx) xxx xxxx</string>
+    <string name="inputNewEmail">e-mail</string>
+    <string name="inputNewPassword">******</string>
+    <string name="btnNewRegister">Register</string>
+    <string name="imgRegister">eagle register</string>
+    <string name="imgUserBooks">books</string>
+    <string name="imgUser">user photo</string>
+    <string name="txtNameUserAccount">Charlie Brown</string>
+    <string name="btnBuy">Buy</string>
+    <string name="btnSellShare">Sell &amp; Share</string>
+    <string name="btnManageShelf">Manage Book Shelf</string>
+    <string name="btnManageAccount">Manage User Account</string>
+    <string name="btnOrders">Manage Orders</string>
+    <string name="btnLogOut">Logout</string>
 </resources>

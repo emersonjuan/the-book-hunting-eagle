@@ -28,7 +28,7 @@
     <string name="imgUser">user photo</string>
     <string name="txtNameUserAccount">Charlie Brown</string>
     <string name="btnBuy">Buy</string>
-    <string name="btnSellShare">Sell & Share</string>
+    <string name="btnSellShare">Sell &amp; Share</string>
     <string name="btnManageShelf">Manage Book Shelf</string>
     <string name="btnManageAccount">Manage User Account</string>
     <string name="btnOrders">Manage Orders</string>

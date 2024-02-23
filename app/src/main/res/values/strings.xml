@@ -33,4 +33,10 @@
     <string name="btnManageAccount">Manage User Account</string>
     <string name="btnOrders">Manage Orders</string>
     <string name="btnLogOut">Logout</string>
+    <string name="btnEdit">Edit</string>
+    <string name="btnEditPhoto">Edit Photo</string>
+    <string name="btnSave">Save</string>
+    <string name="imgLogout">eagle logout</string>
+    <string name="imgBooksLogout">books logout</string>
+    <string name="txtLogout">Thanks! Bye! See Ya Next Time!</string>
 </resources>

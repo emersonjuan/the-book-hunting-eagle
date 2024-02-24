@@ -13,6 +13,12 @@
         android:theme="@style/Theme.TheBookHuntingEagle"
         tools:targetApi="31">
         <activity
+            android:name=".BookshelfPage"
+            android:exported="false" />
+        <activity
+            android:name=".ManageOrders"
+            android:exported="false" />
+        <activity
             android:name=".CartPage"
             android:exported="false" />
         <activity

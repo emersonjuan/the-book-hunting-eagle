@@ -8,6 +8,22 @@
     tools:context=".RegisterPage">
 
     <TextView
+        android:id="@+id/txtNewCity"
+        android:layout_width="125dp"
+        android:layout_height="49dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/txtNewCity"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.618"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
         android:id="@+id/txtWelcome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/txtNewName"
@@ -34,10 +50,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521"
+        app:layout_constraintVertical_bias="0.434"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -50,10 +66,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609"
+        app:layout_constraintVertical_bias="0.528"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -66,10 +82,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_bias="0.701"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -82,10 +98,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788"
+        app:layout_constraintVertical_bias="0.785"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -98,10 +114,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintVertical_bias="0.877"
         tools:ignore="TextSizeCheck" />
 
     <EditText
@@ -178,10 +194,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintHorizontal_bias="0.834"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.608"
+        app:layout_constraintVertical_bias="0.527"
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
@@ -194,6 +210,26 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColorHint="@color/material_dynamic_neutral60"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/inputNewCity"
+        android:layout_width="197dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:gravity="start|center_vertical"
+        android:hint="@string/inputNewCity"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
         android:textColorHint="#78909c"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -201,7 +237,7 @@
         app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.515" />
+        app:layout_constraintVertical_bias="0.617" />
 
     <Button
         android:id="@+id/btnNewRegister"
@@ -218,14 +254,14 @@
 
     <ImageView
         android:id="@+id/imgRegister"
-        android:layout_width="253dp"
-        android:layout_height="178dp"
+        android:layout_width="215dp"
+        android:layout_height="139dp"
         android:contentDescription="@string/imgRegister"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266"
+        app:layout_constraintVertical_bias="0.209"
         app:srcCompat="@drawable/eagle_login"
         tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

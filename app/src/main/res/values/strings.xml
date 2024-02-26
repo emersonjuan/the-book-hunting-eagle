@@ -103,4 +103,6 @@
     <string name="rdPickup2">Pick up</string>
     <string name="rdDelivery2">Delivery</string>
     <string name="imgShelf">Bookshelf</string>
+    <string name="txtNewCity">City</string>
+    <string name="inputNewCity">city</string>
 </resources>

@@ -38,7 +38,6 @@
     <string name="btnSave">Save</string>
     <string name="imgLogout">eagle logout</string>
     <string name="imgBooksLogout">books logout</string>
-    <string name="txtLogout">Thanks! Bye! See Ya Next Time!</string>
     <string name="search">Search</string>
     <string name="txtBestSellers">Best Sellers</string>
     <string name="txtTrending"><![CDATA[New & Trending]]></string>
@@ -81,7 +80,7 @@
     <string name="ckboxOrder">001</string>
     <string name="btnCancel">Cancel Order</string>
     <string name="btnEditOrder">Edit Order</string>
-    <string name="btnAddfee">Pay Addittional Fee</string>
+    <string name="btnAddfee">Pay Additional Fee</string>
     <string name="btnSaveChanges">Save</string>
     <string name="txtBookShelf">My Bookshelf</string>
     <string name="txttab2Row1Column1">Book</string>
@@ -105,4 +104,9 @@
     <string name="imgShelf">Bookshelf</string>
     <string name="txtNewCity">City</string>
     <string name="inputNewCity">city</string>
+    <string name="imgSellShare">book selling</string>
+    <string name="txtSplash">The Book</string>
+    <string name="txtSplash2">Hunting Eagle</string>
+    <string name="txtLogout">You\'re logged out!\nSee You Next Time!</string>
+    <string name="imgBooks3">books</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.thebookhuntingeagle.model;
 
-
 public class User {
 
     private Integer id;

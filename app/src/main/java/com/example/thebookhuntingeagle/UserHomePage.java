@@ -6,6 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.thebookhuntingeagle.model.User;
+import com.example.thebookhuntingeagle.util.LoggedUser;
 
 public class UserHomePage extends AppCompatActivity {
 
@@ -13,12 +19,20 @@ public class UserHomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home_page);
-        Button btnBuy = (Button) findViewById(R.id.btnBuy);
-        Button btnSellShare = (Button) findViewById(R.id.btnSellShare);
-        Button btnManageShelf = (Button) findViewById(R.id.btnManageShelf);
-        Button btnManageAccount = (Button) findViewById(R.id.btnManageAccount);
-        Button btnOrders = (Button) findViewById(R.id.btnOrders);
-        Button btnLogOut = (Button) findViewById(R.id.btnLogOut);
+        Button btnBuy = findViewById(R.id.btnBuy);
+        Button btnSellShare = findViewById(R.id.btnSellShare);
+        Button btnManageShelf = findViewById(R.id.btnManageShelf);
+        Button btnManageAccount = findViewById(R.id.btnManageAccount);
+        Button btnOrders = findViewById(R.id.btnOrders);
+        Button btnLogOut = findViewById(R.id.btnLogOut);
+        TextView txtNameUserAccount = findViewById(R.id.txtNameUserAccount);
+        ImageView imageViewAvatar = findViewById(R.id.imgUser);
+
+        //Header update
+        User user = LoggedUser.getUser();
+        String[] fullName = user.getName().split(" ");
+        txtNameUserAccount.setText(fullName[0]);
+        imageViewAvatar.setImageResource(user.getAvatar());
 
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +72,9 @@ public class UserHomePage extends AppCompatActivity {
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserHomePage.this, LogoutPage.class));
+                LoggedUser.setUser(null);
+                Toast.makeText(UserHomePage.this, "User logged out", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

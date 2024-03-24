@@ -29,6 +29,8 @@ public class LoginPage extends AppCompatActivity {
         EditText inputEmail = findViewById(R.id.inputEmail);
         EditText inputPassword = findViewById(R.id.inputPassword);
 
+        LoggedUser.setUser(null);
+
         UserDataSource ds = new UserDataSource(LoginPage.this);
 
         btnEnter.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +47,9 @@ public class LoginPage extends AppCompatActivity {
                     User user = userOp.get();
                     if (user.getPassword().equals(inputPassword.getText().toString())) {
                         LoggedUser.setUser(user);
-                        startActivity(new Intent(LoginPage.this, UserHomePage.class));
+                        Intent newIntent = new Intent(LoginPage.this, UserHomePage.class);
+                        startActivity(newIntent);
+                        finish();
                         msg = "Welcome " + user.getName();
                     } else {
                         msg = "Invalid user password";

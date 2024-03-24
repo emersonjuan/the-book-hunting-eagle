@@ -33,6 +33,7 @@ public class UserDataSource {
     public boolean insert(User newUser) {
         ContentValues values = new ContentValues();
         values.put("name", newUser.getName());
+        values.put("avatar", newUser.getAvatar());
         values.put("address", newUser.getAddress());
         values.put("city_id", newUser.getCity().getId());
         values.put("phone", newUser.getPhone());
@@ -52,8 +53,9 @@ public class UserDataSource {
             do {
                 User user = new User(
                         res.getInt(0),
-                        res.getString(1),
+                        res.getInt(1),
                         res.getString(2),
+                        res.getString(3),
                         new City(res.getInt(8), res.getString(9)),
                         res.getString(5),
                         res.getString(6),
@@ -78,12 +80,13 @@ public class UserDataSource {
             if (res != null && res.moveToFirst()) {
                 return Optional.of(new User(
                         res.getInt(0),
-                        res.getString(1),
+                        res.getInt(1),
                         res.getString(2),
-                        new City(res.getInt(7), res.getString(8)),
-                        res.getString(4),
+                        res.getString(3),
+                        new City(res.getInt(8), res.getString(9)),
                         res.getString(5),
-                        res.getString(6))
+                        res.getString(6),
+                        res.getString(7))
                 );
 
             }

@@ -17,6 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_USERS_TABLE =
             "CREATE TABLE " + "Users" + " (" +
                     "id" + " INTEGER PRIMARY KEY, " +
+                    "avatar" + " INT NOT NULL, " +
                     "name" + " TEXT NOT NULL, " +
                     "address" + " TEXT NOT NULL, " +
                     "city_id" + " INTEGER NOT NULL, " +

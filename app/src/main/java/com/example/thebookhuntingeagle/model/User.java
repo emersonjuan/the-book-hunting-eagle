@@ -4,6 +4,7 @@ package com.example.thebookhuntingeagle.model;
 public class User {
 
     private Integer id;
+    private Integer avatar;
     private String name;
     private String address;
     private City city;
@@ -14,8 +15,9 @@ public class User {
     public User() {
     }
 
-    public User(Integer id, String name, String address, City city, String phone, String email, String password) {
+    public User(Integer id, Integer avatar, String name, String address, City city, String phone, String email, String password) {
         this.id = id;
+        this.avatar = avatar;
         this.name = name;
         this.address = address;
         this.city = city;
@@ -30,6 +32,14 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Integer avatar) {
+        this.avatar = avatar;
     }
 
     public String getName() {

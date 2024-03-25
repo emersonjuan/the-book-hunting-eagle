@@ -13,6 +13,9 @@ import android.widget.Toast;
 import com.example.thebookhuntingeagle.model.User;
 import com.example.thebookhuntingeagle.util.LoggedUser;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class UserHomePage extends AppCompatActivity {
 
     @Override
@@ -73,6 +76,8 @@ public class UserHomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LoggedUser.setUser(null);
+                startActivity(new Intent(UserHomePage.this, LogoutPage.class));
+
                 Toast.makeText(UserHomePage.this, "User logged out", Toast.LENGTH_SHORT).show();
                 finish();
             }

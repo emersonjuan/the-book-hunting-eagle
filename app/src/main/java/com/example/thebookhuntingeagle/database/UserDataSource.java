@@ -32,8 +32,9 @@ public class UserDataSource {
 
     public boolean insert(User newUser) {
         ContentValues values = new ContentValues();
-        values.put("name", newUser.getName());
+        values.put("id", newUser.getId());
         values.put("avatar", newUser.getAvatar());
+        values.put("name", newUser.getName());
         values.put("address", newUser.getAddress());
         values.put("city_id", newUser.getCity().getId());
         values.put("phone", newUser.getPhone());

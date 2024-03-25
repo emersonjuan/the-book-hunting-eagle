@@ -108,8 +108,10 @@ public class RegisterPage extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Input validations
-                if (!isInputDataValidated()) {
-                    Toast.makeText(RegisterPage.this, "Please, fill up inputs properly.",
+                List<String> invalidInputs = validateInputFields();
+                if (invalidInputs.size()>0) {
+                    Toast.makeText(RegisterPage.this,
+                            "Please, fill up input " + invalidInputs.get(0) + " properly.",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -168,28 +170,28 @@ public class RegisterPage extends AppCompatActivity {
         });
     }
 
-    private boolean isInputDataValidated() {
+    private List<String> validateInputFields() {
+
+        List<String> invalidFields = new ArrayList<>();
+
         //Name Validation
         if (inputNewName.getText().toString().trim().isEmpty())
-            return false;
+            invalidFields.add("Name");
         //Address Validation
         if (inputNewAddress.getText().toString().trim().isEmpty())
-            return false;
-        //Address Validation
-        if (inputNewAddress.getText().toString().trim().isEmpty())
-            return false;
+            invalidFields.add("Address");
         //Phone validation
         if (inputNewPhone.getText().toString().trim().length()!=10)
-            return false;
+            invalidFields.add("Phone");
         //Email validation
         Pattern pattern = Pattern.compile("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
         Matcher matcher = pattern.matcher(inputNewEmail.getText().toString().trim());
         if (!matcher.matches())
-            return false;
+            invalidFields.add("E-mail");
         //Password validation
         if (inputNewPassword.getText().toString().trim().isEmpty())
-            return false;
+            invalidFields.add("Password");
 
-        return true;
+        return invalidFields;
     }
 }

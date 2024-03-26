@@ -1,7 +1,12 @@
 package com.example.thebookhuntingeagle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,10 +18,19 @@ import android.widget.Toast;
 import com.example.thebookhuntingeagle.model.User;
 import com.example.thebookhuntingeagle.util.LoggedUser;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class UserHomePage extends AppCompatActivity {
+
+    TextView txtNameUserAccount;
+    ImageView imageViewAvatar;
+
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK)
+                        loadUserData();
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +42,10 @@ public class UserHomePage extends AppCompatActivity {
         Button btnManageAccount = findViewById(R.id.btnManageAccount);
         Button btnOrders = findViewById(R.id.btnOrders);
         Button btnLogOut = findViewById(R.id.btnLogOut);
-        TextView txtNameUserAccount = findViewById(R.id.txtNameUserAccount);
-        ImageView imageViewAvatar = findViewById(R.id.imgUser);
+        txtNameUserAccount = findViewById(R.id.txtNameUserAccount);
+        imageViewAvatar = findViewById(R.id.imgUser);
 
-        //Header update
-        User user = LoggedUser.getUser();
-        String[] fullName = user.getName().split(" ");
-        txtNameUserAccount.setText(fullName[0]);
-        imageViewAvatar.setImageResource(user.getAvatar());
+        loadUserData();
 
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +71,9 @@ public class UserHomePage extends AppCompatActivity {
         btnManageAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserHomePage.this, ManageAccount.class));
+//                startActivity(new Intent(UserHomePage.this, ManageAccount.class));
+                Intent intent = new Intent(UserHomePage.this, ManageAccount.class);
+                mStartForResult.launch(intent);
             }
         });
 
@@ -82,5 +94,16 @@ public class UserHomePage extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    /**
+     * Updates Name and Avatar on screen
+     */
+    private void loadUserData() {
+        //Header update
+        User user = LoggedUser.getUser();
+        String[] fullName = user.getName().split(" ");
+        txtNameUserAccount.setText(fullName[0]);
+        imageViewAvatar.setImageResource(user.getAvatar());
     }
 }

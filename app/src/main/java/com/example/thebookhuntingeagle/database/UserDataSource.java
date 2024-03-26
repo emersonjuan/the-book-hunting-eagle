@@ -44,7 +44,21 @@ public class UserDataSource {
         return (r!=-1);
     }
 
-    public List<User> findAll() {
+    public boolean update(User editedUser) {
+        ContentValues values = new ContentValues();
+        values.put("avatar", editedUser.getAvatar());
+        values.put("name", editedUser.getName());
+        values.put("address", editedUser.getAddress());
+        values.put("city_id", editedUser.getCity().getId());
+        values.put("phone", editedUser.getPhone());
+        values.put("password", editedUser.getPassword());
+        long r = db.update("users", values,
+                "id = ?", new String[]{String.valueOf(editedUser.getId())});
+
+        return (r!=-1);
+    }
+
+        public List<User> findAll() {
         List<User> users = new ArrayList<>();
 
         String query = "SELECT u.*, c.* FROM users u LEFT JOIN cities c ON u.city_id=c.id ORDER BY email";

@@ -33,7 +33,7 @@
     <string name="btnManageAccount">Manage User Account</string>
     <string name="btnOrders">Manage Orders</string>
     <string name="btnLogOut">Logout</string>
-    <string name="btnEdit">Edit</string>
+    <string name="btnReset">Reset</string>
     <string name="btnEditPhoto">Edit Photo</string>
     <string name="btnSave">Save</string>
     <string name="imgLogout">eagle logout</string>

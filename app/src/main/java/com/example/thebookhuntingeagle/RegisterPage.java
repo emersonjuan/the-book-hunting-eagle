@@ -28,7 +28,6 @@ public class RegisterPage extends AppCompatActivity {
 
 
     List<City> cityList;
-    int selectedCityId;
     int currentAvatarId;
     City selectedCity;
 
@@ -64,8 +63,8 @@ public class RegisterPage extends AppCompatActivity {
         inputNewPassword = findViewById(R.id.inputNewPassword);
         //Buttons
         btnNewRegister = findViewById(R.id.btnNewRegister);
-        btnPreviousAvatar = findViewById(R.id.btnPreviousAvatar);
-        btnNextAvatar = findViewById(R.id.btnNextAvatar);
+        btnPreviousAvatar = findViewById(R.id.btnPreviousAvatarManage);
+        btnNextAvatar = findViewById(R.id.btnNextAvatarManage);
         //ImageView
         imageViewAvatar = findViewById(R.id.imageViewAvatar);
 

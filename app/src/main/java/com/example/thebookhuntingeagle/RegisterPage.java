@@ -16,10 +16,10 @@ import com.example.thebookhuntingeagle.database.CityDataSource;
 import com.example.thebookhuntingeagle.database.UserDataSource;
 import com.example.thebookhuntingeagle.model.City;
 import com.example.thebookhuntingeagle.model.User;
+import com.example.thebookhuntingeagle.util.AvatarImageList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,8 +28,8 @@ public class RegisterPage extends AppCompatActivity {
 
 
     List<City> cityList;
-    int currentAvatarId;
     City selectedCity;
+    AvatarImageList avatarList;
 
     EditText inputNewName;
     EditText inputNewAddress;
@@ -67,14 +67,9 @@ public class RegisterPage extends AppCompatActivity {
         btnNextAvatar = findViewById(R.id.btnNextAvatarManage);
         //ImageView
         imageViewAvatar = findViewById(R.id.imageViewAvatar);
-
         //List of avatar images
-        List<Integer> avatarList = new ArrayList<>(Arrays.asList(
-                R.drawable.avatar0,
-                R.drawable.avatar1,
-                R.drawable.avatar2
-        ));
-        imageViewAvatar.setImageResource(avatarList.get(0));
+        avatarList = new AvatarImageList();
+        imageViewAvatar.setImageResource(avatarList.getCurrentAvatar());
 
         //Table City handler
         CityDataSource cds = new CityDataSource(this);
@@ -129,7 +124,7 @@ public class RegisterPage extends AppCompatActivity {
                 //New user registration
                 User newUser = new User(
                         null,
-                        avatarList.get(currentAvatarId),
+                        avatarList.getCurrentAvatar(),
                         inputNewName.getText().toString(),
                         inputNewAddress.getText().toString(),
                         selectedCity,
@@ -155,16 +150,14 @@ public class RegisterPage extends AppCompatActivity {
         btnPreviousAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentAvatarId = (--currentAvatarId+avatarList.size())%avatarList.size();
-                imageViewAvatar.setImageResource(avatarList.get(currentAvatarId));
+                imageViewAvatar.setImageResource(avatarList.previousAvatar());
             }
         });
 
         btnNextAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentAvatarId = ++currentAvatarId%avatarList.size();
-                imageViewAvatar.setImageResource(avatarList.get(currentAvatarId));
+                imageViewAvatar.setImageResource(avatarList.nextAvatar());
             }
         });
     }

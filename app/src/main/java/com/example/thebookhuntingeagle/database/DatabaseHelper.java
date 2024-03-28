@@ -34,6 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //Insert  cities
         initializeCities(db);
+        initializeUsers(db);
     }
 
     @Override
@@ -60,6 +61,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("cities", null, values);
         values.put("name", "Coquitlam");
         db.insert("cities", null, values);
+    }
+
+    // Initialized users for test purpose.
+    private void initializeUsers(SQLiteDatabase db) {
+        String[] name = {"Alessandro", "Emerson", "Patricia"};
+        int[] avatar = {2131165428, 2131165430, 2131165429};
+        String[] address = {"777 Royals", "2024 False Creek", "2372 Edmonds"};
+        String[] phone = {"0000000001", "0000000002", "0000000003"};
+        String[] email = {"alessandro@test.ca", "emerson@test.ca", "patricia@test.ca"};
+        String[] password = {"2023", "2024", "2025"};
+
+        for (int i = 0; i < name.length; i++) {
+            ContentValues values = new ContentValues();
+            values.put("avatar", avatar[i]);
+            values.put("name", name[i]);
+            values.put("address", address[i]);
+            values.put("city_id", i);
+            values.put("phone", phone[i]);
+            values.put("email", email[i]);
+            values.put("password", password[i]);
+            db.insert("users", null, values);
+        }
     }
 
 }

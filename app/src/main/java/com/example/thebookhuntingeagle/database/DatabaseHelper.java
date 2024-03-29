@@ -27,14 +27,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "FOREIGN KEY (city_id) REFERENCES Cities (id) " +
                     ")";
 
+    private static final String SQL_CREATE_SALES_TABLE =
+            "CREATE TABLE " + "Sales" + " (" +
+                    "id" + " INTEGER PRIMARY KEY, " +
+                    "user_id" + " INT NOT NULL, " +
+                    "book_title" + " TEXT NOT NULL, " +
+                    "author" + " TEXT NOT NULL, " +
+                    "edition" + " TEXT NOT NULL, " +
+                    "condition" + " TEXT CHECK( condition IN ('NEW', 'GOOD', 'FAIR', 'POOR') ) NOT NULL, " +
+                    "discount" + " REAL NOT NULL, " +
+                    "price" + " REAL NOT NULL, " +
+                    "share_sale" + " TEXT CHECK( share_sale IN ('SELL', 'SHARE') ) NOT NULL, " +
+                    "FOREIGN KEY (user_id) REFERENCES Users (id) " +
+                    ")";
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_CITIES_TABLE);
         db.execSQL(SQL_CREATE_USERS_TABLE);
+        db.execSQL(SQL_CREATE_SALES_TABLE);
 
         //Insert  cities
         initializeCities(db);
         initializeUsers(db);
+        initializeBooks(db);
     }
 
     @Override
@@ -82,6 +99,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put("email", email[i]);
             values.put("password", password[i]);
             db.insert("users", null, values);
+        }
+    }
+
+    // Initialized books for test purpose.
+    private void initializeBooks(SQLiteDatabase db){
+        int[] user_id = {1, 2, 3};
+        String[] book = {"The Philosophy of Snoopy", "Harry Potter and the Order of the Phoenix", "The Alchemist"};
+        String[] author = {"Charles M. Schulz","J.K. Rowling","Paulo Coelho"};
+        String[] edition = {"Hardcover – Illustrated","Fifth","25th anniversary edition"};
+        String[] condition = {"POOR", "NEW", "GOOD"};
+        int[] discount = {10, 5, 0};
+        double[] price = {21.35, 17.21, 19.37};
+        String[] share_sale = {"SELL","SELL", "SHARE"};
+
+        for (int i = 0; i < book.length; i++){
+            ContentValues values = new ContentValues();
+            values.put("user_id", user_id[i]);
+            values.put("book_title", book[i]);
+            values.put("author", author[i]);
+            values.put("edition", edition[i]);
+            values.put("condition", condition[i]);
+            values.put("discount", discount[i]);
+            values.put("price", price[i]);
+            values.put("share_sale", share_sale[i]);
+            db.insert("Sales", null, values);
         }
     }
 

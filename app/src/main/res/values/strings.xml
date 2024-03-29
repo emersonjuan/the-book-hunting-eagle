@@ -44,7 +44,7 @@
     <string name="txtResults">Search Results</string>
     <string name="btnAddCart">Add to Cart</string>
     <string name="txtSellShare"><![CDATA[Selling & Sharing Details]]></string>
-    <string name="txtBookName">Book</string>
+    <string name="txtBookName">Title</string>
     <string name="txtDescription">Description</string>
     <string name="txtLocation">Location</string>
     <string name="txtReviews">Reviews</string>

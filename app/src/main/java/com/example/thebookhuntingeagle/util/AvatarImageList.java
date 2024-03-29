@@ -9,9 +9,14 @@ public class AvatarImageList {
 
     private int currentAvatar = 0;
     private final Integer[] avatarIds = {
-            R.drawable.avatar0,
-            R.drawable.avatar1,
-            R.drawable.avatar2
+            R.drawable.charlie_brown,
+            R.drawable.lucy_vanpelt,
+            R.drawable.snoopy,
+            R.drawable.marcy,
+            R.drawable.peggy_jean,
+            R.drawable.pigpen,
+            R.drawable.sally_brown,
+            R.drawable.schroeder
     };
     List<Integer> avatarList = Arrays.asList(avatarIds);
 

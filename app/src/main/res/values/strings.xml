@@ -109,4 +109,17 @@
     <string name="txtSplash2">Hunting Eagle</string>
     <string name="txtLogout">You\'re logged out!\nSee You Next Time!</string>
     <string name="imgBooks3">books</string>
+    <string name="txtBookAuthor">Author</string>
+    <string name="txtBookEdition">Edition</string>
+    <string name="txtBookDiscount">Discount</string>
+    <string name="txtBookCondition">Condition</string>
+    <string name="inputBookNameHint">Book Name</string>
+    <string name="inputBookAuthorHint">Book Author</string>
+    <string name="inputBookEditionHint">Book Edition</string>
+    <string name="inputPriceSell">Price</string>
+    <string name="inputBookPriceHint">Book Price</string>
+    <string name="inputBookDiscHint">Book Disc.</string>
+    <string name="rdBookCondNew">New</string>
+    <string name="rdBookCondPoor">Poor</string>
+    <string name="rdBookCondGood">Good</string>
 </resources>

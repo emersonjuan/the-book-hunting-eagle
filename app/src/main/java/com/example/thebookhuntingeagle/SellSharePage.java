@@ -2,17 +2,11 @@ package com.example.thebookhuntingeagle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import com.example.thebookhuntingeagle.model.Sales;
-import com.example.thebookhuntingeagle.model.User;
 
 public class SellSharePage extends AppCompatActivity {
 
@@ -60,15 +54,15 @@ public class SellSharePage extends AppCompatActivity {
 //                uds.close();
 
                 //Output message
-                String msg;
-                if (inserted) {
-                    msg = "Book registered successfully!";
-                    finish();
-                } else {
-                    msg = "Error on inserting new user. Please, check the inputs.";
-                }
-                Toast.makeText(SellSharePage.this, msg, Toast.LENGTH_LONG).show();
-                startActivity(new Intent(SellSharePage.this, BookshelfPage.class));
+//                String msg;
+//                if (inserted) {
+//                    msg = "Book registered successfully!";
+//                    finish();
+//                } else {
+//                    msg = "Error on inserting new user. Please, check the inputs.";
+//                }
+//                Toast.makeText(SellSharePage.this, msg, Toast.LENGTH_LONG).show();
+//                startActivity(new Intent(SellSharePage.this, BookshelfPage.class));
             }
         });
     }

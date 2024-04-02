@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.thebookhuntingeagle.util.BookCondition;
+import com.example.thebookhuntingeagle.util.ShareSaleOption;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Eagle.db";
     private static final int DATABASE_VERSION = 1;
@@ -58,6 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS cities");
         db.execSQL("DROP TABLE IF EXISTS users");
+        db.execSQL("DROP TABLE IF EXISTS sales");
         onCreate(db);
     }
 
@@ -94,7 +98,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put("avatar", avatar[i]);
             values.put("name", name[i]);
             values.put("address", address[i]);
-            values.put("city_id", i);
+            values.put("city_id", i+1);
             values.put("phone", phone[i]);
             values.put("email", email[i]);
             values.put("password", password[i]);
@@ -108,10 +112,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] book = {"The Philosophy of Snoopy", "Harry Potter and the Order of the Phoenix", "The Alchemist"};
         String[] author = {"Charles M. Schulz","J.K. Rowling","Paulo Coelho"};
         String[] edition = {"Hardcover – Illustrated","Fifth","25th anniversary edition"};
-        String[] condition = {"POOR", "NEW", "GOOD"};
+        BookCondition[] condition = {BookCondition.POOR, BookCondition.NEW, BookCondition.GOOD};
         int[] discount = {10, 5, 0};
         double[] price = {21.35, 17.21, 19.37};
-        String[] share_sale = {"SELL","SELL", "SHARE"};
+        ShareSaleOption[] share_sale = {ShareSaleOption.SELL, ShareSaleOption.SELL, ShareSaleOption.SHARE};
 
         for (int i = 0; i < book.length; i++){
             ContentValues values = new ContentValues();
@@ -119,10 +123,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put("book_title", book[i]);
             values.put("author", author[i]);
             values.put("edition", edition[i]);
-            values.put("condition", condition[i]);
+            values.put("condition", condition[i].name());
             values.put("discount", discount[i]);
             values.put("price", price[i]);
-            values.put("share_sale", share_sale[i]);
+            values.put("share_sale", share_sale[i].name());
             db.insert("Sales", null, values);
         }
     }

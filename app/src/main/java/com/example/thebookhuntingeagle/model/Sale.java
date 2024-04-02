@@ -1,34 +1,34 @@
 package com.example.thebookhuntingeagle.model;
 
 import com.example.thebookhuntingeagle.util.BookCondition;
-import com.example.thebookhuntingeagle.util.ShareSaleCondition;
+import com.example.thebookhuntingeagle.util.ShareSaleOption;
 
-public class Sales {
+public class Sale {
     private Integer id;
-    private Integer user_id;
-    private String book_title;
+    private String bookTitle;
     private String author;
     private String edition;
     private BookCondition condition;
-    private Integer discount;
+    private Double discount;
     private Double price;
-    private ShareSaleCondition share_sale;
+    private ShareSaleOption shareSale;
+    private User seller;
 
-    public Sales(){
+    public Sale(){
     }
 
-    public Sales(Integer id, Integer user_id, String book_title, String author, String edition,
-                 BookCondition condition, Integer discount, Double price, ShareSaleCondition share_sale){
-
+    public Sale(Integer id, String bookTitle, String author, String edition,
+                BookCondition condition, Double discount, Double price,
+                ShareSaleOption shareSale, User seller) {
         this.id = id;
-        this.user_id = user_id;
-        this.book_title = book_title;
+        this.bookTitle = bookTitle;
         this.author = author;
         this.edition = edition;
         this.condition = condition;
         this.discount = discount;
         this.price = price;
-        this.share_sale = share_sale;
+        this.shareSale = shareSale;
+        this.seller = seller;
     }
 
     public Integer getId() {
@@ -39,20 +39,12 @@ public class Sales {
         this.id = id;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public String getBookTitle() {
+        return bookTitle;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getBook_title() {
-        return book_title;
-    }
-
-    public void setBook_title(String book_title) {
-        this.book_title = book_title;
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
 
     public String getAuthor() {
@@ -79,11 +71,11 @@ public class Sales {
         this.condition = condition;
     }
 
-    public Integer getDiscount() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Integer discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 
@@ -95,12 +87,20 @@ public class Sales {
         this.price = price;
     }
 
-    public ShareSaleCondition getShare_sale() {
-        return share_sale;
+    public ShareSaleOption getShareSale() {
+        return shareSale;
     }
 
-    public void setShare_sale(ShareSaleCondition share_sale) {
-        this.share_sale = share_sale;
+    public void setShareSale(ShareSaleOption shareSale) {
+        this.shareSale = shareSale;
+    }
+
+    public User getSeller() {
+        return seller;
+    }
+
+    public void setSeller(User seller) {
+        this.seller = seller;
     }
 }
 

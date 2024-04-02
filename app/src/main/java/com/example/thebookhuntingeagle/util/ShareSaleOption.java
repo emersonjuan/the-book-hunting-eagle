@@ -1,5 +1,5 @@
 package com.example.thebookhuntingeagle.util;
 
-public enum ShareSaleCondition {
+public enum ShareSaleOption {
     SELL, SHARE
 }

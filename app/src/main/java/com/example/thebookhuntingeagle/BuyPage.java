@@ -6,6 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
+
+import com.example.thebookhuntingeagle.database.SaleDataSource;
+import com.example.thebookhuntingeagle.model.Sale;
+
+import java.util.List;
 
 public class BuyPage extends AppCompatActivity {
 
@@ -20,12 +26,18 @@ public class BuyPage extends AppCompatActivity {
         to select the book he wants to buy.
         Once the book is selected the user clicks the button add to cart and goes to the cart page.
          */
-        Button btnAddCart = (Button) findViewById(R.id.btnAddCart);
+        Button btnAddCart = findViewById(R.id.btnAddCart);
+        SearchView searchView = findViewById(R.id.search);
+        SaleDataSource sds = new SaleDataSource(this);
 
         btnAddCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BuyPage.this, CartPage.class));
+//                startActivity(new Intent(BuyPage.this, CartPage.class));
+                sds.open();
+                String searchTxt = searchView.getQuery().toString();
+                List<Sale> booksFound = sds.findByTitle(searchTxt);
+                sds.close();
             }
         });
     }

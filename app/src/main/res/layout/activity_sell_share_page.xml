@@ -7,84 +7,6 @@
     android:background="@drawable/background_login5"
     tools:context=".SellSharePage">
 
-    <Button
-        android:id="@+id/btnAddShelf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_primary30"
-        android:text="@string/btnAddShelf"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
-
-    <TextView
-        android:id="@+id/txtSellShare2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtSellShareOptions"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703" />
-
-    <TextView
-        android:id="@+id/txtLocation2"
-        android:layout_width="127dp"
-        android:layout_height="40dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/txtReviews"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/txtLocation"
-        android:layout_width="127dp"
-        android:layout_height="40dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/txtLocation"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/txtDescription"
-        android:layout_width="129dp"
-        android:layout_height="46dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/txtDescription"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427"
-        tools:ignore="TextSizeCheck" />
-
     <TextView
         android:id="@+id/txtNameUserAccount4"
         android:layout_width="wrap_content"
@@ -141,28 +63,141 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.268"
         tools:ignore="TextSizeCheck" />
 
+    <ImageView
+        android:id="@+id/imgSellShare"
+        android:layout_width="99dp"
+        android:layout_height="77dp"
+        android:contentDescription="@string/imgSellShare"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079"
+        app:srcCompat="@drawable/sell_share_icon" />
+
     <TextView
-        android:id="@+id/txtPrice"
-        android:layout_width="71dp"
-        android:layout_height="37dp"
+        android:id="@+id/txtBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="start|center_vertical"
-        android:text="@string/txtPrice"
+        android:text="@string/txtBookAuthor"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.335" />
+
+    <TextView
+        android:id="@+id/txtBookEdition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/txtBookEdition"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <TextView
+        android:id="@+id/txtBookCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBookCondition"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <EditText
+        android:id="@+id/inputBookTitle"
+        android:layout_width="242dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputBookNameHint"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.269" />
+
+    <EditText
+        android:id="@+id/inputBookAuthor"
+        android:layout_width="241dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputBookAuthorHint"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <EditText
+        android:id="@+id/inputBookEdition"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputBookEditionHint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403" />
+
+    <EditText
+        android:id="@+id/inputBookDiscount"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputBookDiscHint"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572" />
+
+    <TextView
+        android:id="@+id/txtSellShare2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtSellShareOptions"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -172,10 +207,10 @@
         android:indeterminate="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintHorizontal_bias="0.804"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <RadioGroup
         android:id="@+id/rdGroup"
@@ -185,10 +220,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
+        app:layout_constraintVertical_bias="0.873"
         tools:ignore="UselessLeaf">
 
         <RadioButton
@@ -215,17 +250,151 @@
             android:visibility="visible" />
     </RadioGroup>
 
-    <ImageView
-        android:id="@+id/imgSellShare"
-        android:layout_width="99dp"
-        android:layout_height="77dp"
-        android:contentDescription="@string/imgSellShare"
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="129dp"
+        android:layout_height="46dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/txtDescription"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
-        app:srcCompat="@drawable/sell_share_icon" />
+        app:layout_constraintVertical_bias="0.65"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtLocation"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/txtLocation"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtBookDiscout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/txtBookDiscount"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <Button
+        android:id="@+id/btnAddShelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/material_dynamic_primary30"
+        android:text="@string/btnAddShelf"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <EditText
+        android:id="@+id/inputPriceSell"
+        android:layout_width="118dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputBookPriceHint"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577" />
+
+    <TextView
+        android:id="@+id/txtLocation2"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/txtReviews"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/txtPrice"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578"
+        tools:ignore="TextSizeCheck" />
+
+    <RadioGroup
+        android:id="@+id/rdCondGroup"
+        android:layout_width="251dp"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496">
+
+        <RadioButton
+            android:id="@+id/rdBookCondNew"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rdBookCondNew"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rdBookCondPoor"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rdBookCondPoor"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rdBookCondGood"
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rdBookCondGood"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.thebookhuntingeagle.R;
 import com.example.thebookhuntingeagle.util.BookCondition;
 import com.example.thebookhuntingeagle.util.ShareSaleOption;
 
@@ -87,7 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Initialized users for test purpose.
     private void initializeUsers(SQLiteDatabase db) {
         String[] name = {"Alessandro", "Emerson", "Patricia"};
-        int[] avatar = {2131165428, 2131165430, 2131165429};
+        int[] avatar = {R.drawable.charlie_brown, R.drawable.schroeder, R.drawable.peggy_jean};
         String[] address = {"777 Royals", "2024 False Creek", "2372 Edmonds"};
         String[] phone = {"0000000001", "0000000002", "0000000003"};
         String[] email = {"alessandro@test.ca", "emerson@test.ca", "patricia@test.ca"};

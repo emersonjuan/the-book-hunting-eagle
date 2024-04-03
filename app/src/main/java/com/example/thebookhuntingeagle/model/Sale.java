@@ -102,5 +102,9 @@ public class Sale {
     public void setSeller(User seller) {
         this.seller = seller;
     }
+
+    public Double getDiscountedPrice() {
+        return price * (1-discount/100);
+    }
 }
 

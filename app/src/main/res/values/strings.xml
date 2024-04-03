@@ -113,6 +113,7 @@
     <string name="txtBookEdition">Edition</string>
     <string name="txtBookDiscount">Discount</string>
     <string name="txtBookCondition">Condition</string>
+    <string name="txtBookSearch">Find a book nearby…</string>
     <string name="inputBookNameHint">Book Name</string>
     <string name="inputBookAuthorHint">Book Author</string>
     <string name="inputBookEditionHint">Book Edition</string>

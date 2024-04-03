@@ -8,7 +8,7 @@
     tools:context=".CartPage">
 
     <TextView
-        android:id="@+id/txtNameCurrentUser2"
+        android:id="@+id/txtUserNameBookDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
@@ -24,16 +24,16 @@
         app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
-        android:id="@+id/imgCurrentUser2"
+        android:id="@+id/imgCurrentUserBookDetails"
         android:layout_width="109dp"
         android:layout_height="103dp"
         android:contentDescription="@string/imgCurrentUser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029"
+        app:layout_constraintVertical_bias="0.053"
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -210,8 +210,8 @@
 
     <TextView
         android:id="@+id/txtOrderDetailBook"
-        android:layout_width="60dp"
-        android:layout_height="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:gravity="start|center_vertical"
         android:text="@string/txtBookName2"
@@ -228,8 +228,8 @@
 
     <TextView
         android:id="@+id/txtOrderDetailBookTitle"
-        android:layout_width="125dp"
-        android:layout_height="57dp"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="BookTitle"
         android:textColor="?attr/colorOnPrimaryContainer"
@@ -237,15 +237,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289"
+        app:layout_constraintVertical_bias="0.3"
         tools:ignore="HardcodedText,TextSizeCheck" />
 
     <TextView
         android:id="@+id/txtOrderDetailBookAuthor"
-        android:layout_width="wrap_content"
+        android:layout_width="299dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="Book Author"
@@ -254,15 +254,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.353"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtOrderDetailBookEdition"
-        android:layout_width="wrap_content"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="Book Edition"
@@ -271,16 +271,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
+        app:layout_constraintVertical_bias="0.406"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtOrderDetailBookCondition"
-        android:layout_width="92dp"
-        android:layout_height="28dp"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="Condition"
         android:textColor="?attr/colorOnPrimaryContainer"
@@ -288,15 +288,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
+        app:layout_constraintVertical_bias="0.457"
         tools:ignore="HardcodedText,TextSizeCheck" />
 
     <TextView
         android:id="@+id/txtOrderDetailBookPrice"
-        android:layout_width="wrap_content"
+        android:layout_width="207dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="Book Price"
@@ -305,15 +305,14 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtOrderDetailBookDiscount"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="Price Discount"
@@ -322,15 +321,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565"
+        app:layout_constraintVertical_bias="0.557"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtOrderDetailBookFinalPrice"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|end"
         android:text="Final Price"
@@ -339,10 +338,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606"
+        app:layout_constraintVertical_bias="0.603"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -355,7 +354,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.729"
@@ -395,8 +394,8 @@
 
     <TextView
         android:id="@+id/txtOrderDetailBookUserCity"
-        android:layout_width="34dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="City"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"

@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.thebookhuntingeagle.model.Sale;
+import com.example.thebookhuntingeagle.model.User;
+import com.example.thebookhuntingeagle.util.LoggedUser;
 
 public class CartPage extends AppCompatActivity {
 
@@ -24,12 +27,32 @@ public class CartPage extends AppCompatActivity {
     private TextView txtOrderDetailBookUserPhone;
     private TextView txtOrderDetailBookUserCity;
     private TextView txtOrderDetailBookUserAddress;
+    private ImageView imgAvatar;
+    private TextView txtUserName;
+    private Button btnPlaceOrder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_page);
         //References for controls
+        identifyObjectReferences();
+        //Sale coming from previous screen
+        Sale sale = (Sale) getIntent().getSerializableExtra("sale");
+        //Load sale data to current screen
+        loadSale(sale);
+        loadUserData(LoggedUser.getUser());
+
+        btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartPage.this, ShippingOptions.class));
+            }
+        });
+    }
+
+    private void identifyObjectReferences() {
         txtOrderDetailBookTitle = findViewById(R.id.txtOrderDetailBookTitle);
         txtOrderDetailBookAuthor = findViewById(R.id.txtOrderDetailBookAuthor);
         txtOrderDetailBookEdition = findViewById(R.id.txtOrderDetailBookEdition);
@@ -42,18 +65,9 @@ public class CartPage extends AppCompatActivity {
         txtOrderDetailBookUserPhone = findViewById(R.id.txtOrderDetailBookUserPhone);
         txtOrderDetailBookUserCity = findViewById(R.id.txtOrderDetailBookUserCity);
         txtOrderDetailBookUserAddress = findViewById(R.id.txtOrderDetailBookUserAddress);
-        Button btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
-        //Sale coming from previous screen
-        Sale sale = (Sale) getIntent().getSerializableExtra("sale");
-        //Load sale data to current screen
-        loadSale(sale);
-
-        btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CartPage.this, ShippingOptions.class));
-            }
-        });
+        imgAvatar = findViewById(R.id.imgCurrentUserBookDetails);
+        txtUserName = findViewById(R.id.txtUserNameBookDetails);
+        btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
     }
 
     private void loadSale(Sale sale) {
@@ -69,5 +83,10 @@ public class CartPage extends AppCompatActivity {
         txtOrderDetailBookUserPhone.setText(sale.getSeller().getPhone());
         txtOrderDetailBookUserCity.setText(sale.getSeller().getCity().getName());
         txtOrderDetailBookUserAddress.setText(sale.getSeller().getAddress());
+    }
+
+    private void loadUserData(User user) {
+        imgAvatar.setImageResource(user.getAvatar());
+        txtUserName.setText(user.getName().split(" ")[0]);
     }
 }

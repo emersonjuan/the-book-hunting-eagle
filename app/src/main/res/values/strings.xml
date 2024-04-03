@@ -54,7 +54,7 @@
     <string name="rdShare">Share</string>
     <string name="btnAddShelf">Add to Bookshelf</string>
     <string name="imgCart">shopping cart</string>
-    <string name="txtOrderDetails">Order Details</string>
+    <string name="txtOrderDetails">Shopping Cart</string>
     <string name="txtBookName2">Book</string>
     <string name="txtPrice2">Price</string>
     <string name="txtTaxes">Taxes</string>
@@ -123,4 +123,24 @@
     <string name="rdBookCondNew">New</string>
     <string name="rdBookCondPoor">Poor</string>
     <string name="rdBookCondGood">Good</string>
+    <string name="txtShippingOrder">Order Details</string>
+    <string name="imgShipping">ship</string>
+    <string name="btnAddDelivery">Add Delivery Fee</string>
+    <string name="txtAddDelivery">Delivery Fees</string>
+    <string name="txtItem1">Item 1</string>
+    <string name="txtTitleItem1">Title Item1</string>
+    <string name="txtItem2">Item 2\n</string>
+    <string name="txtTitleItem2">Title item 2</string>
+    <string name="txtSubtotal">Subtotal</string>
+    <string name="txtSubtotalValue">Price before discounts</string>
+    <string name="txtTotalPrice">Total</string>
+    <string name="txtTotalValue">Total price after discount + delivery fee</string>
+    <string name="imgCurrentUser">User\'s avatar</string>
+    <string name="txtNameCurrentUser">Current User</string>
+    <string name="txtOrderDetailAuthor">Author</string>
+    <string name="txtOrderDetailEdition">Edition</string>
+    <string name="txtOrderDetailCondition">Condition</string>
+    <string name="txtOrderDetailOrigPrice">Original Price</string>
+    <string name="txtOrderDiscount">Discount</string>
+    <string name="txtOrderSubtotal">Subtotal</string>
 </resources>

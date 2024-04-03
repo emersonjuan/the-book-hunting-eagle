@@ -51,7 +51,7 @@ public class CartPage extends AppCompatActivity {
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartPage.this, ManageOrders.class));
+                startActivity(new Intent(CartPage.this, ShippingOptions.class));
             }
         });
     }

@@ -3,7 +3,9 @@ package com.example.thebookhuntingeagle.model;
 import com.example.thebookhuntingeagle.util.BookCondition;
 import com.example.thebookhuntingeagle.util.ShareSaleOption;
 
-public class Sale {
+import java.io.Serializable;
+
+public class Sale implements Serializable {
     private Integer id;
     private String bookTitle;
     private String author;

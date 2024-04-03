@@ -2,7 +2,10 @@ package com.example.thebookhuntingeagle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -50,6 +53,16 @@ public class BuyPage extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
+            }
+        });
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Sale saleItem = (Sale) parent.getItemAtPosition(position);
+                Intent orderDetailIntent = new Intent(BuyPage.this, CartPage.class);
+                orderDetailIntent.putExtra("sale", saleItem);
+                startActivity(orderDetailIntent);
             }
         });
     }

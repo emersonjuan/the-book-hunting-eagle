@@ -1,8 +1,9 @@
 package com.example.thebookhuntingeagle.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class City {
+public class City implements Serializable {
 
     private Integer id;
     private String name;

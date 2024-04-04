@@ -1,11 +1,5 @@
 package com.example.thebookhuntingeagle;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +9,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.thebookhuntingeagle.database.OrderDataSource;
 import com.example.thebookhuntingeagle.model.Order;
 import com.example.thebookhuntingeagle.model.User;
@@ -23,7 +23,7 @@ import com.example.thebookhuntingeagle.util.LoggedUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManageOrders extends AppCompatActivity {
+public class EditOrder extends AppCompatActivity {
 
     private ImageView imgManageOrdersAvatar;
     private TextView txtManageOrdersUserName;
@@ -70,7 +70,7 @@ public class ManageOrders extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Order orderItem = (Order) parent.getItemAtPosition(position);
-                Intent orderDetailIntent = new Intent(ManageOrders.this, CartPage.class);
+                Intent orderDetailIntent = new Intent(EditOrder.this, CartPage.class);
 //                orderDetailIntent.putExtra("order", orderItem);
 //                editOrderForResult.launch(orderDetailIntent);
             }

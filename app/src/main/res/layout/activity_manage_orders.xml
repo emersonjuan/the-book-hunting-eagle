@@ -2,66 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutManageOrders"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login5"
     tools:context=".ManageOrders">
-
-    <Button
-        android:id="@+id/btnAddFee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_primary30"
-        android:text="@string/btnAddfee"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821" />
-
-    <Button
-        android:id="@+id/btnSaveChanges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_primary30"
-        android:text="@string/btnSaveChanges"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
-
-    <Button
-        android:id="@+id/btnCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_primary30"
-        android:text="@string/btnCancel"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
-
-    <Button
-        android:id="@+id/btnEditOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_primary30"
-        android:text="@string/btnEditOrder"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
 
     <RadioGroup
         android:id="@+id/rdGroupShipping"
@@ -76,30 +21,10 @@
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836">
-
-        <RadioButton
-            android:id="@+id/rdShippingDelivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:fontFamily="serif"
-            android:text="@string/rdDelivery"
-            android:textColor="?attr/colorOnPrimaryContainer"
-            android:textSize="18sp" />
-
-        <RadioButton
-            android:id="@+id/rdShippingPickup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="@string/rdPickup"
-            android:textColor="?attr/colorOnPrimaryContainer"
-            android:textSize="18sp" />
-    </RadioGroup>
+        app:layout_constraintVertical_bias="0.836" />
 
     <TextView
-        android:id="@+id/txtNameUserAccount7"
+        android:id="@+id/txtManageOrderTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
@@ -115,23 +40,7 @@
         app:layout_constraintVertical_bias="0.206" />
 
     <TextView
-        android:id="@+id/txtNameUserAccount9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="@string/txtShipping2"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
-
-    <TextView
-        android:id="@+id/txtNameUserAccount6"
+        android:id="@+id/txtManageOrdersUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
@@ -147,7 +56,7 @@
         app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
-        android:id="@+id/imgUser6"
+        android:id="@+id/imgManageOrdersAvatar"
         android:layout_width="112dp"
         android:layout_height="119dp"
         android:contentDescription="@string/imgUser"
@@ -156,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
+        app:layout_constraintVertical_bias="0.029"
         app:srcCompat="@drawable/charlie_photo"
         tools:ignore="ImageContrastCheck" />
 
@@ -174,114 +83,15 @@
         app:srcCompat="@drawable/manage_order"
         tools:ignore="ImageContrastCheck" />
 
-    <TableLayout
-        android:id="@+id/tableLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="110dp"
+    <ListView
+        android:id="@+id/listViewManageOrders"
+        android:layout_width="357dp"
+        android:layout_height="460dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461">
-
-        <!-- Row 1 -->
-        <TableRow>
-
-            <TextView
-                android:id="@+id/txttab2Row1Column1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow1Column1"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txttab2Row1Column2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow1Column2"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txttab2Row1Column3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow1Column3"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtRow1Column4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow1Column4"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <!-- Row 2 -->
-        <TableRow>
-
-            <CheckBox
-                android:id="@+id/ckboxBook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:fontFamily="serif"
-                android:text="@string/ckboxOrder"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="7dp"
-                tools:layout_editor_absoluteY="330dp" />
-
-            <TextView
-                android:id="@+id/txtRow2Column2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow2Column2"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/txttab2Row2Column3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow2Column3"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/txttab2Row2Column4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="@string/txtRow2Column4"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textSize="20sp" />
-        </TableRow>
-
-    </TableLayout>
+        app:layout_constraintVertical_bias="0.919" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

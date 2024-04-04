@@ -22,15 +22,6 @@ import java.time.LocalDate;
 
 public class ShippingOptions extends AppCompatActivity {
 
-//    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
-//            new ActivityResultCallback<ActivityResult>() {
-//                @Override
-//                public void onActivityResult(ActivityResult result) {
-//                    if (result.getResultCode() == Activity.RESULT_OK)
-//                        loadUserData();
-//                }
-//            });
-
     private ImageView imgShippingUserAvatar;
     private TextView txtShippingUserName;
     private TextView txtShippedBookTitle;

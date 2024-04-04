@@ -42,7 +42,6 @@ public class CartPage extends AppCompatActivity {
             @Override
             public void onActivityResult(ActivityResult result) {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    Toast.makeText(CartPage.this, "OK result. Closing alone.", Toast.LENGTH_SHORT).show();
                     setResult(RESULT_OK);
                     finish();
                 }

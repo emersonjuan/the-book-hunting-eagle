@@ -67,7 +67,7 @@ public class SaleDataSource {
                 "SELECT * FROM sales s " +
                         "LEFT JOIN users u ON s.user_id=u.id " +
                         "LEFT JOIN cities c ON u.city_id=c.id " +
-                        "LEFT JOIN (SELECT sale_id FROM orders WHERE status = 'CREATED') o " +
+                        "LEFT JOIN (SELECT sale_id FROM orders WHERE (status='CREATED' OR status='CONCLUDED')) o " +
                         "ON s.id = o.sale_id " +
                         "WHERE o.sale_id IS NULL " +
                         "AND LOWER(s.book_title) LIKE LOWER(?) " +

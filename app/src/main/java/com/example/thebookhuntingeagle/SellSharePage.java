@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,6 +66,7 @@ public class SellSharePage extends AppCompatActivity {
         Button btnAddShelf = (Button) findViewById(R.id.btnAddShelf);
         txtNameUserAccount = findViewById(R.id.txtNameUserAccount4);
         imageViewAvatar = findViewById(R.id.imgUser4);
+        RadioGroup rdGroupSellShare = findViewById(R.id.rdGroupSellShare);
 
         loadUserData();
 
@@ -100,6 +102,23 @@ public class SellSharePage extends AppCompatActivity {
                     msg = "Error on inserting new book. Please, check the inputs.";
                 }
                 Toast.makeText(SellSharePage.this, msg, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        rdGroupSellShare.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.rdShare) {
+                    bookPrice.setText("0.00");
+                    bookPrice.setEnabled(false);
+                    bookDiscount.setText("0.00");
+                    bookDiscount.setEnabled(false);
+
+                }
+                else {
+                    bookPrice.setEnabled(true);
+                    bookDiscount.setEnabled(true);
+                }
             }
         });
 

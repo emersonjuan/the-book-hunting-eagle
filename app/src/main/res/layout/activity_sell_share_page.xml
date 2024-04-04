@@ -137,7 +137,6 @@
         android:ems="10"
         android:hint="@string/inputBookNameHint"
         android:inputType="text"
-        android:textColorHint="#263238"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.762"
@@ -169,6 +168,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/inputBookEditionHint"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.75"
@@ -208,7 +208,7 @@
         app:layout_constraintVertical_bias="0.763" />
 
     <RadioGroup
-        android:id="@+id/rdGroup"
+        android:id="@+id/rdGroupSellShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="120dp"
@@ -246,23 +246,6 @@
             android:textStyle="bold"
             android:visibility="visible" />
     </RadioGroup>
-
-    <TextView
-        android:id="@+id/txtLocation"
-        android:layout_width="127dp"
-        android:layout_height="40dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/txtLocation"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688"
-        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/txtBookDiscout"
@@ -343,6 +326,7 @@
             android:id="@+id/rdBookCondNew"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/rdBookCondNew"
             tools:ignore="TouchTargetSizeCheck" />
 

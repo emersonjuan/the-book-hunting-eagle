@@ -143,4 +143,11 @@
     <string name="txtOrderDetailOrigPrice">Original Price</string>
     <string name="txtOrderDiscount">Discount</string>
     <string name="txtOrderSubtotal">Subtotal</string>
+    <string name="btnYourOrders">Your Orders</string>
+    <string name="txtOrderHistory">Orders History</string>
+    <string name="imgOrderHistory">history icon</string>
+    <string name="imgUserOrder">img user</string>
+    <string name="txtNameUserOrders">Charlie Brown</string>
+    <string name="txtManagOrderDetails">Order Details</string>
+
 </resources>

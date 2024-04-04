@@ -38,9 +38,10 @@ public class UserHomePage extends AppCompatActivity {
         setContentView(R.layout.activity_user_home_page);
         Button btnBuy = findViewById(R.id.btnBuy);
         Button btnSellShare = findViewById(R.id.btnSellShare);
-        Button btnManageShelf = findViewById(R.id.btnManageShelf);
+        Button btnYourOrders = findViewById(R.id.btnYourOrders);
         Button btnManageAccount = findViewById(R.id.btnManageAccount);
         Button btnOrders = findViewById(R.id.btnOrders);
+        Button btnManageShelf = findViewById(R.id.btnManageShelf);
         Button btnLogOut = findViewById(R.id.btnLogOut);
         txtNameUserAccount = findViewById(R.id.txtNameUserAccount);
         imageViewAvatar = findViewById(R.id.imgUser);
@@ -61,10 +62,10 @@ public class UserHomePage extends AppCompatActivity {
             }
         });
 
-        btnManageShelf.setOnClickListener(new View.OnClickListener() {
+        btnYourOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserHomePage.this, BookshelfPage.class));
+                startActivity(new Intent(UserHomePage.this, YourOrders.class));
             }
         });
 
@@ -81,6 +82,13 @@ public class UserHomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(UserHomePage.this, ManageOrders.class));
+            }
+        });
+
+        btnManageShelf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserHomePage.this, BookshelfPage.class));
             }
         });
 

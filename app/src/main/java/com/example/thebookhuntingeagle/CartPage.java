@@ -1,13 +1,19 @@
 package com.example.thebookhuntingeagle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.thebookhuntingeagle.model.Sale;
 import com.example.thebookhuntingeagle.model.User;
@@ -31,6 +37,17 @@ public class CartPage extends AppCompatActivity {
     private TextView txtUserName;
     private Button btnPlaceOrder;
 
+    ActivityResultLauncher<Intent> shippingOptionsForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+        new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Toast.makeText(CartPage.this, "OK result. Closing alone.", Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_OK);
+                    finish();
+                }
+            }
+        });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +64,12 @@ public class CartPage extends AppCompatActivity {
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartPage.this, ShippingOptions.class));
+                Intent shippingIntent = new Intent(CartPage.this, ShippingOptions.class);
+                shippingIntent.putExtra("sale", sale);
+                shippingOptionsForResult.launch(shippingIntent);
             }
         });
+
     }
 
     private void identifyObjectReferences() {

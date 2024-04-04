@@ -1,7 +1,12 @@
 package com.example.thebookhuntingeagle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +22,16 @@ import java.util.List;
 
 public class BuyPage extends AppCompatActivity {
 
+    ActivityResultLauncher<Intent> cartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        setResult(RESULT_OK);
+                        finish();
+                    }
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +77,7 @@ public class BuyPage extends AppCompatActivity {
                 Sale saleItem = (Sale) parent.getItemAtPosition(position);
                 Intent orderDetailIntent = new Intent(BuyPage.this, CartPage.class);
                 orderDetailIntent.putExtra("sale", saleItem);
-                startActivity(orderDetailIntent);
+                cartForResult.launch(orderDetailIntent);
             }
         });
     }

@@ -125,14 +125,14 @@
     <string name="rdBookCondGood">Good</string>
     <string name="txtShippingOrder">Order Details</string>
     <string name="imgShipping">ship</string>
-    <string name="btnAddDelivery">Add Delivery Fee</string>
-    <string name="txtAddDelivery">Delivery Fees</string>
+    <string name="btnCreateOrder">Confirm Placement</string>
+    <string name="txtAddDelivery">Shipping Option</string>
     <string name="txtItem1">Item 1</string>
     <string name="txtTitleItem1">Title Item1</string>
     <string name="txtItem2">Item 2\n</string>
     <string name="txtTitleItem2">Title item 2</string>
     <string name="txtSubtotal">Subtotal</string>
-    <string name="txtSubtotalValue">Price before discounts</string>
+    <string name="txtSubtotalValue">Price before shipping fees</string>
     <string name="txtTotalPrice">Total</string>
     <string name="txtTotalValue">Total price after discount + delivery fee</string>
     <string name="imgCurrentUser">User\'s avatar</string>

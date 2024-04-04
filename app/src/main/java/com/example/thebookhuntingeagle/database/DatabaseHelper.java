@@ -45,12 +45,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "FOREIGN KEY (user_id) REFERENCES Users (id) " +
                     ")";
 
+    private static final String SQL_CREATE_ORDERS_TABLE =
+            "CREATE TABLE " + "Orders" + " (" +
+                    "id" + " INTEGER PRIMARY KEY, " +
+                    "sale_id" + " INT NOT NULL, " +
+                    "buyer_id" + " INT NOT NULL, " +
+                    "ship" + " TEXT NOT NULL, " +
+                    "status" + " TEXT NOT NULL, " +
+                    "start_date" + " TEXT NOT NULL, " +
+                    "end_date" + " TEXT, " +
+                    "FOREIGN KEY (sale_id) REFERENCES Sales (id), " +
+                    "FOREIGN KEY (buyer_id) REFERENCES Users (id) " +
+                    ")";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_CITIES_TABLE);
         db.execSQL(SQL_CREATE_USERS_TABLE);
         db.execSQL(SQL_CREATE_SALES_TABLE);
+        db.execSQL(SQL_CREATE_ORDERS_TABLE);
 
         //Insert  cities
         initializeCities(db);

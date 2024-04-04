@@ -8,7 +8,7 @@
     tools:context=".ShippingOptions">
 
     <TextView
-        android:id="@+id/txtNameCurrentUser"
+        android:id="@+id/txtShippingUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
@@ -24,25 +24,9 @@
         app:layout_constraintVertical_bias="0.045" />
 
     <TextView
-        android:id="@+id/txtItem2"
-        android:layout_width="73dp"
-        android:layout_height="31dp"
-        android:text="@string/txtItem2"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/txtSubtotal"
-        android:layout_width="73dp"
-        android:layout_height="31dp"
+        android:id="@+id/txtShippingSubtotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtSubtotal"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"
@@ -56,19 +40,19 @@
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/txtTotalPrice"
-        android:layout_width="73dp"
-        android:layout_height="31dp"
+        android:id="@+id/txtShippingTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtTotalPrice"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
+        app:layout_constraintVertical_bias="0.678"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -88,7 +72,7 @@
         app:layout_constraintVertical_bias="0.76" />
 
     <RadioGroup
-        android:id="@+id/rdGroup4"
+        android:id="@+id/rdGroupShipping"
         android:layout_width="364dp"
         android:layout_height="44dp"
         android:layout_marginEnd="10dp"
@@ -102,7 +86,7 @@
         app:layout_constraintVertical_bias="0.989">
 
         <RadioButton
-            android:id="@+id/rdDelivery2"
+            android:id="@+id/rdShippingDelivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
@@ -116,7 +100,7 @@
             tools:layout_editor_absoluteY="551dp" />
 
         <RadioButton
-            android:id="@+id/rdPickup2"
+            android:id="@+id/rdShippingPickup"
             android:layout_width="172dp"
             android:layout_height="45dp"
             android:fontFamily="serif"
@@ -150,24 +134,11 @@
         android:contentDescription="@string/imgShipping"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.659"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
+        app:layout_constraintVertical_bias="0.162"
         app:srcCompat="@drawable/shipping" />
-
-    <Button
-        android:id="@+id/btnAddDelivery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_primary30"
-        android:text="@string/btnAddDelivery"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
 
     <TextView
         android:id="@+id/txtAddDelivery"
@@ -179,103 +150,132 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" />
+        app:layout_constraintVertical_bias="0.32" />
+
+    <Button
+        android:id="@+id/btnCreateOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/material_dynamic_primary30"
+        android:text="@string/btnCreateOrder"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
     <TextView
-        android:id="@+id/txtItem1"
-        android:layout_width="73dp"
-        android:layout_height="31dp"
-        android:text="@string/txtItem1"
+        android:id="@+id/txtBookShipped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482"
+        app:layout_constraintVertical_bias="0.461"
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/txtTitleItem1"
-        android:layout_width="88dp"
-        android:layout_height="33dp"
-        android:text="@string/txtTitleItem1"
+        android:id="@+id/txtShippedBookTitle"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:text="Book Title"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.459"
+        tools:ignore="TextSizeCheck"
+        tools:textAlignment="textStart" />
 
     <TextView
-        android:id="@+id/txtTitleItem2"
-        android:layout_width="112dp"
-        android:layout_height="29dp"
-        android:text="@string/txtTitleItem2"
-        android:textColor="?attr/colorOnPrimaryContainer"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/txtSubtotalValue"
-        android:layout_width="189dp"
-        android:layout_height="26dp"
+        android:id="@+id/txtShippingSubtotalValue"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
         android:text="@string/txtSubtotalValue"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.703"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627"
+        app:layout_constraintVertical_bias="0.623"
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/txtTotalValue"
-        android:layout_width="316dp"
-        android:layout_height="33dp"
-        android:text="@string/txtTotalValue"
+        android:id="@+id/txtShippingTotalValue"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:text="Total Price"
         android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69"
+        app:layout_constraintVertical_bias="0.677"
         tools:ignore="TextSizeCheck" />
 
     <ImageView
-        android:id="@+id/imgCurrentUser"
+        android:id="@+id/imgShippingUserAvatar"
         android:layout_width="115dp"
         android:layout_height="120dp"
         android:contentDescription="@string/imgCurrentUser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032"
+        app:layout_constraintVertical_bias="0.128"
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtShippedBookSeller"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:text="Book Seller"
+        android:textAlignment="textStart"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
+
+    <TextView
+        android:id="@+id/txtSellerShipped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seller"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

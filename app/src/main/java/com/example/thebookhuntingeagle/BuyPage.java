@@ -16,6 +16,7 @@ import android.widget.SearchView;
 
 import com.example.thebookhuntingeagle.database.SaleDataSource;
 import com.example.thebookhuntingeagle.model.Sale;
+import com.example.thebookhuntingeagle.util.LoggedUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public class BuyPage extends AppCompatActivity {
                 sds.open();
                 String searchTxt = searchView.getQuery().toString();
                 adapter.clear();
-                adapter.addAll(sds.findByTitle(searchTxt));
+                adapter.addAll(sds.findAvailableBooksByTitle(searchTxt, LoggedUser.getUser().getId()));
                 adapter.notifyDataSetInvalidated();
                 sds.close();
 

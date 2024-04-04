@@ -60,6 +60,26 @@ public class SaleDataSource {
         return makeSaleList(rs);
     }
 
+    public List<Sale> findAvailableBooksByTitle(String partialBookTitle, int buyer_id) {
+
+        //The SQL query
+        String query =
+                "SELECT * FROM sales s " +
+                        "LEFT JOIN users u ON s.user_id=u.id " +
+                        "LEFT JOIN cities c ON u.city_id=c.id " +
+                        "LEFT JOIN (SELECT sale_id FROM orders WHERE status = 'CREATED') o " +
+                        "ON s.id = o.sale_id " +
+                        "WHERE o.sale_id IS NULL " +
+                        "AND LOWER(s.book_title) LIKE LOWER(?) " +
+                        "AND s.user_id <> ?" +
+                        "ORDER BY book_title ";
+        //Query execution and result
+        Cursor rs = db.rawQuery(query, new String[]{"%" + partialBookTitle + "%", String.valueOf(buyer_id)});
+
+        //Format result set into List
+        return makeSaleList(rs);
+    }
+
     public List<Sale> findByTitle(String partialBookTitle) {
 
         //The SQL query

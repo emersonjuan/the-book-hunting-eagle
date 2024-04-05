@@ -60,6 +60,25 @@ public class SaleDataSource {
         return makeSaleList(rs);
     }
 
+    public List<Sale> findAvailableBooksByUserId(int seller_id) {
+
+        //The SQL query
+        String query =
+                "SELECT * FROM sales s " +
+                        "LEFT JOIN users u ON s.user_id = u.id " +
+                        "LEFT JOIN cities c ON u.city_id=c.id " +
+                        "LEFT JOIN (SELECT sale_id FROM orders WHERE (status='CONCLUDED')) o " +
+                        "ON s.user_id = o.sale_id " +
+                        "WHERE s.user_id = ? " +
+                        "ORDER BY book_title ";
+
+        //Query execution and result
+        Cursor rs = db.rawQuery(query, new String[]{String.valueOf(seller_id)});
+
+        //Format result set into List
+        return makeSaleList(rs);
+    }
+
     public List<Sale> findAvailableBooksByTitle(String partialBookTitle, int buyer_id) {
 
         //The SQL query

@@ -30,6 +30,7 @@ public class ManageAccount extends AppCompatActivity {
     Button btnReset;
     Button btnSave;
     ImageView imgUserManage;
+    ImageView imgUserManage2;
     FloatingActionButton btnPreviousAvatar;
     FloatingActionButton btnNextAvatar;
     TextView txtEditEmail;
@@ -59,6 +60,7 @@ public class ManageAccount extends AppCompatActivity {
         btnReset = findViewById(R.id.btnReset);
         btnSave = findViewById(R.id.btnSave);
         imgUserManage = findViewById(R.id.imgUserEdit);
+        imgUserManage2 = findViewById(R.id.imgUserEdit2);
         btnPreviousAvatar = findViewById(R.id.btnPreviousAvatarManage);
         btnNextAvatar = findViewById(R.id.btnNextAvatarManage);
         txtEditEmail = findViewById(R.id.txtEditEmail);
@@ -157,6 +159,7 @@ public class ManageAccount extends AppCompatActivity {
 
         User user = LoggedUser.getUser();
         imgUserManage.setImageResource(user.getAvatar());
+        imgUserManage2.setImageResource(user.getAvatar());
         avatarList.setCurrentAvatar(user.getAvatar());
         String[] email = user.getEmail().split("@");
         txtEditEmail.setText(email[0]);

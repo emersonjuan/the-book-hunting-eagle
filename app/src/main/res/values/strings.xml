@@ -148,4 +148,13 @@
     <string name="btnEditOrderUpdateShip">Update Shipping</string>
     <string name="txtEditOrderBookTileLabel">Book:</string>
     <string name="txtEditOrderBookPriceLabel">Price:</string>
+    <string name="btnYourOrders">Your Orders</string>
+    <string name="txtOrderHistory">Orders History</string>
+    <string name="imgOrderHistory">history icon</string>
+    <string name="imgUserOrder">img user</string>
+    <string name="txtNameUserOrders">Charlie Brown</string>
+    <string name="txtManagOrderDetails">Order Details</string>
+    <string name="txtManageuserAccount">Manage Account</string>
+    <string name="imgUserEdit2">charlie</string>
+    <string name="txtYourOrders">Your Orders</string>
 </resources>

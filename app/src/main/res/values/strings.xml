@@ -143,4 +143,9 @@
     <string name="txtOrderDetailOrigPrice">Original Price</string>
     <string name="txtOrderDiscount">Discount</string>
     <string name="txtOrderSubtotal">Subtotal</string>
+    <string name="btnEditOrderConcludeOrder">Conclude Order</string>
+    <string name="btnEditOrderCancelOrder">Cancel Order</string>
+    <string name="btnEditOrderUpdateShip">Update Shipping</string>
+    <string name="txtEditOrderBookTileLabel">Book:</string>
+    <string name="txtEditOrderBookPriceLabel">Price:</string>
 </resources>

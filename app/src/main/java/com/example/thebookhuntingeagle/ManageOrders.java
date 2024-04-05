@@ -27,15 +27,14 @@ public class ManageOrders extends AppCompatActivity {
 
     private ImageView imgManageOrdersAvatar;
     private TextView txtManageOrdersUserName;
-    private ListView listview;
+    OrderlistAdapter adapter;
 
     ActivityResultLauncher<Intent> editOrderForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
-                        setResult(RESULT_OK);
-                        finish();
+                        loadOrderList();
                     }
                 }
             });
@@ -46,7 +45,7 @@ public class ManageOrders extends AppCompatActivity {
         setContentView(R.layout.activity_manage_orders);
 
         //References for controls
-        listview = findViewById(R.id.listViewManageOrders);
+        ListView listview = findViewById(R.id.listViewManageOrders);
         imgManageOrdersAvatar = findViewById(R.id.imgManageOrdersAvatar);
         txtManageOrdersUserName = findViewById(R.id.txtManageOrdersUserName);
 
@@ -55,24 +54,20 @@ public class ManageOrders extends AppCompatActivity {
 
         //List of sale items
         List<Order> orders = new ArrayList<>();
-        OrderlistAdapter adapter = new OrderlistAdapter(this, orders);
+        adapter = new OrderlistAdapter(this, orders);
         listview.setAdapter(adapter);
 
-        //Datasource for sales
-        OrderDataSource ods = new OrderDataSource(this);
-        ods.open();
-        adapter.clear();
-        adapter.addAll(ods.findByBuyerOrSeller(LoggedUser.getUser()));
-        adapter.notifyDataSetInvalidated();
-        ods.close();
+        //Populates list
+        loadOrderList();
+
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Order orderItem = (Order) parent.getItemAtPosition(position);
-                Intent orderDetailIntent = new Intent(ManageOrders.this, CartPage.class);
-//                orderDetailIntent.putExtra("order", orderItem);
-//                editOrderForResult.launch(orderDetailIntent);
+                Intent editOrderIntent = new Intent(ManageOrders.this, EditOrder.class);
+                editOrderIntent.putExtra("order", orderItem);
+                editOrderForResult.launch(editOrderIntent);
             }
         });
     }
@@ -83,5 +78,14 @@ public class ManageOrders extends AppCompatActivity {
         String[] fullName = user.getName().split(" ");
         txtManageOrdersUserName.setText(fullName[0]);
         imgManageOrdersAvatar.setImageResource(user.getAvatar());
+    }
+
+    private void loadOrderList() {
+        OrderDataSource ods = new OrderDataSource(this);
+        ods.open();
+        adapter.clear();
+        adapter.addAll(ods.findByBuyerOrSeller(LoggedUser.getUser()));
+        adapter.notifyDataSetInvalidated();
+        ods.close();
     }
 }

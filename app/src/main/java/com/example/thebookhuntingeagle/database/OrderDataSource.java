@@ -51,6 +51,34 @@ public class OrderDataSource {
         return (r!=-1);
     }
 
+    public boolean updateShip(int orderId, ShipOption shipOption) {
+        ContentValues values = new ContentValues();
+        values.put("ship", shipOption.name());
+
+        return update(orderId, values);
+    }
+
+    public boolean conclude(int orderId) {
+        ContentValues values = new ContentValues();
+        values.put("status", OrderStatus.CONCLUDED.name());
+
+        return update(orderId, values);
+    }
+
+    public boolean cancel(int orderId) {
+        ContentValues values = new ContentValues();
+        values.put("status", OrderStatus.CANCELLED.name());
+
+        return update(orderId, values);
+    }
+
+    private boolean update(int orderId, ContentValues values) {
+        long r = db.update("orders", values,
+                "id = ?", new String[]{String.valueOf(orderId)});
+
+        return (r!=-1);
+    }
+
     public List<Order> findByBuyerOrSeller(User user) {
         List<Order> orders = new ArrayList<>();
         Map<Integer, City> cities = new HashMap<>();

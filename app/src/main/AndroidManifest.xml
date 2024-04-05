@@ -28,6 +28,9 @@
             android:name=".BookshelfPage"
             android:exported="false" />
         <activity
+            android:name=".EditOrder"
+            android:exported="false" />
+        <activity
             android:name=".ManageOrders"
             android:exported="false" />
         <activity

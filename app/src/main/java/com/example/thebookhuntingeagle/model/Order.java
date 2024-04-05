@@ -3,9 +3,10 @@ package com.example.thebookhuntingeagle.model;
 import com.example.thebookhuntingeagle.model.enums.OrderStatus;
 import com.example.thebookhuntingeagle.model.enums.ShipOption;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Order {
+public class Order implements Serializable {
 
     private Integer id;
     private Sale sale;

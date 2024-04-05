@@ -5,14 +5,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.thebookhuntingeagle.database.SaleDataSource;
+import com.example.thebookhuntingeagle.model.Sale;
+import com.example.thebookhuntingeagle.model.User;
+import com.example.thebookhuntingeagle.util.LoggedUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookshelfPage extends AppCompatActivity {
 
+    TextView txtNameUserAccount;
+    ImageView imageViewAvatar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookshelf_page);
+
         /* In this page the user will see all his recent bookshelf information, on a list, with
         data retrieved from the database (and that were saved in it during the activities performed
         on the sell share page). Here maybe will need to add radio buttons next to each list option
@@ -25,14 +40,34 @@ public class BookshelfPage extends AppCompatActivity {
         Another option would be to keep the design as it is but find a way to show the bookshelf data
         in a certain way that the cells could be edited.
          */
-        Button btnSaveChanges2 = (Button) findViewById(R.id.btnSaveChanges2);
+        txtNameUserAccount = findViewById(R.id.txtNameUserAccount8);
+        imageViewAvatar = findViewById(R.id.imgUser7);
+        ListView listview = findViewById(R.id.listViewBookshelf);
 
-        btnSaveChanges2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BookshelfPage.this, UserHomePage.class));
-            }
-        });
+        loadUserData();
 
+        List<Sale> sales = new ArrayList<>();
+
+        BookshelfAdapter adapter = new BookshelfAdapter(this, sales);
+        listview.setAdapter(adapter);
+
+        //Datasource for sales
+        SaleDataSource sds = new SaleDataSource(this);
+        sds.open();
+        adapter.clear();
+
+        List<Sale> salesTest = sds.findAvailableBooksByUserId(LoggedUser.getUser().getId());
+
+
+        adapter.addAll(salesTest);
+        adapter.notifyDataSetInvalidated();
+        sds.close();
+    }
+    private void loadUserData() {
+        //Header update
+        User user = LoggedUser.getUser();
+        String[] fullName = user.getName().split(" ");
+        txtNameUserAccount.setText(fullName[0]);
+        imageViewAvatar.setImageResource(user.getAvatar());
     }
 }

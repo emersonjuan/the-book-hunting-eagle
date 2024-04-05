@@ -60,7 +60,7 @@ public class ShippingOptions extends AppCompatActivity {
                 ShipOption shipOption = ShipOption.DELIVERY;
                 if (rdGroupShipping.getCheckedRadioButtonId() == R.id.rdShippingPickup)
                     shipOption = ShipOption.PICKUP;
-                Order newOrder = new Order(
+                    Order newOrder = new Order(
                         null,
                         sale,
                         LoggedUser.getUser(),
@@ -76,7 +76,10 @@ public class ShippingOptions extends AppCompatActivity {
 
                 String msg;
                 if (inserted) {
-                    msg = "Order registered successfully!";
+                    if (shipOption.equals(ShipOption.PICKUP))
+                        msg = "Please, remember that you have to pick your book up";
+                    else
+                        msg = "Order registered successfully!";
                     setResult(RESULT_OK);
                     finish();
                 } else {

@@ -68,8 +68,9 @@ public class SaleDataSource {
                         "LEFT JOIN users u ON s.user_id = u.id " +
                         "LEFT JOIN cities c ON u.city_id=c.id " +
                         "LEFT JOIN (SELECT sale_id FROM orders WHERE (status='CONCLUDED')) o " +
-                        "ON s.user_id = o.sale_id " +
-                        "WHERE s.user_id = ? " +
+                        "ON s.id = o.sale_id " +
+                        "WHERE o.sale_id IS NULL " +
+                        "AND s.user_id = ? " +
                         "ORDER BY book_title ";
 
         //Query execution and result

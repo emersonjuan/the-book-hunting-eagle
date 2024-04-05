@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book Name"
-        android:textColor="#FFFFFF"
+        android:textColor="#ff21005d"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="City"
-            android:textColor="#FFFFFF" />
+            android:textColor="#ff21005d" />
 
         <TextView
             android:id="@+id/txtSaleItemPrice"
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:text="Price"
             android:textAlignment="textEnd"
-            android:textColor="#FFFFFF" />
+            android:textColor="#ff21005d" />
     </LinearLayout>
 
     <TextView

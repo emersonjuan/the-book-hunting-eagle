@@ -11,7 +11,7 @@
         android:layout_marginTop="5sp"
         android:layout_marginBottom="5sp"
         android:text="Book Name"
-        android:textColor="#FFFFFF"
+        android:textColor="#ff21005d"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -22,7 +22,8 @@
         <TextView
             android:id="@+id/txtOrderItemDate"
             style="@style/list_item"
-            android:text="City" />
+            android:text="City"
+            android:textColor="#ff21005d" />
 
         <TextView
             android:id="@+id/txtOrderItemBuyerSeller"
@@ -30,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Buyer"
-            android:textColor="#FFFFFF" />
+            android:textColor="#ff21005d" />
 
         <TextView
             android:id="@+id/txtOrderItemStatus"
@@ -40,7 +41,7 @@
             android:layout_weight="1"
             android:text="CREATED"
             android:textAlignment="textEnd"
-            android:textColor="#FFFFFF" />
+            android:textColor="#ff21005d" />
 
     </LinearLayout>
 
